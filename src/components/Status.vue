@@ -93,7 +93,7 @@ if (apikey.value != '') {
                 },
                 {
                     key: '已充值CNY(=USD)',
-                    value: chargedMoney.value != '' ? `¥(=$) ${chargedMoney.value}` : '未设置'
+                    value: chargedMoney.value != '' ? `¥(=$)${chargedMoney.value}` : '未设置'
                 },
                 {
                     key: 'CNY(=USD)余额',
