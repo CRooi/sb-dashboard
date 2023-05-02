@@ -10,7 +10,14 @@
             <t-tag style="position: relative; top: -4px;" v-if="!isLoading && gpt4Status" theme="primary" variant="light-outline">已开启</t-tag>
             <t-tag style="position: relative; top: -4px;" v-if="!isLoading && !gpt4Status" theme="danger" variant="light-outline">已关闭</t-tag>
         </div>
-        <t-popconfirm theme="danger" v-if="!isLoading" @visible-change="onSwitchGpt4VisibleChange">
+        <t-popconfirm theme="danger" v-if="!isLoading && gpt4Status" @visible-change="onSwitchGpt4VisibleChange">
+            <template #content>
+                <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
+                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">这个操作将禁用GPT4。</p>
+            </template>
+            <t-button style="margin-bottom: 20px;" v-if="!isLoading" :loading="isButtonLoading" :disabled="isButtonLoading">{{ gpt4Status ? '关闭' : '开启' }}GPT4</t-button>
+        </t-popconfirm>
+        <t-popconfirm theme="danger" v-if="!isLoading && !gpt4Status" @visible-change="onSwitchGpt4VisibleChange">
             <template #content>
                 <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
                 <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">对于普通用户，建议使用GPT3.5而不是GPT4。因为GPT4的价格比GPT3.5高出157.5至315倍。且GPT3.5的响应速度是GPT4的四倍多。</p>
