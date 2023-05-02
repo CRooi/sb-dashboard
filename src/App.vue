@@ -44,6 +44,7 @@
             </t-content>
         </t-layout>
     </t-layout>
+    <t-link style="opacity: 0.5; position: absolute; bottom: 10px; right: 10px;" href="https://github.com/CRooi/sb-dashboard/" target="_blank">GitHub</t-link>
 </template>  
 
 <script setup lang="ts">
