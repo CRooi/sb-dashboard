@@ -1,6 +1,6 @@
 # SB Dashboard
 
-[sbdash.crooi.io/bus206](https://sbdash.crooi.io/)
+[sbdash.crooi.io](https://sbdash.crooi.io/)
 
 ## Data From
 
