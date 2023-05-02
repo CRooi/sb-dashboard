@@ -1,6 +1,6 @@
 <template>
     <div v-if="apikey == ''">
-        您还未配置SB API Key。
+        您还未配置OpenAI-SB API Key。
     </div>
     <div v-if="apikey != ''">
         <div style="font-weight: bold; font-size: 24px; margin-bottom: 10px;">

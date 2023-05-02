@@ -3,8 +3,8 @@
         <t-aside>
             <t-menu theme="light" :value="nowShow" style="margin-right: 50px; min-height: 100vh;">
                 <template #logo>
-                    <div style="margin: auto; font-size: 24px;">
-                        SB Dashboard
+                    <div style="margin: auto; font-size: 18px;">
+                        OpenAI-SB Dashboard
                     </div>
                 </template>
                 <t-menu-item value="status" @click="nowShow = 'status'">
