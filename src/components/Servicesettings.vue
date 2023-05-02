@@ -59,13 +59,13 @@ if(apikey.value != '') {
     })()
 }
 
-let onSwitchGpt4VisibleChange = (val: any, context: any = {}) => {
+let onSwitchGpt4VisibleChange = (_val: any, context: any = {}) => {
     if (context && context.trigger === 'confirm') {
         switchGpt4()
     }
 }
 
-let onChangeApikeyVisibleChange = (val: any, context: any = {}) => {
+let onChangeApikeyVisibleChange = (_val: any, context: any = {}) => {
     if (context && context.trigger === 'confirm') {
         changeApikey()
     }
