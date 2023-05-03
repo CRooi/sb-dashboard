@@ -13,14 +13,14 @@
         <t-popconfirm theme="danger" v-if="!isLoading && gpt4Status" @visible-change="onSwitchGpt4VisibleChange">
             <template #content>
                 <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
-                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">这个操作将禁用GPT4。</p>
+                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">关闭GPT4将影响到正在使用GPT4的服务。</p>
             </template>
             <t-button style="margin-bottom: 20px;" v-if="!isLoading" :loading="isButtonLoading" :disabled="isButtonLoading">{{ gpt4Status ? '关闭' : '开启' }}GPT4</t-button>
         </t-popconfirm>
         <t-popconfirm theme="danger" v-if="!isLoading && !gpt4Status" @visible-change="onSwitchGpt4VisibleChange">
             <template #content>
                 <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
-                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">对于普通用户，建议使用GPT3.5而不是GPT4。因为GPT4的价格比GPT3.5高出157.5至315倍。且GPT3.5的响应速度是GPT4的四倍多。</p>
+                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">对于普通用户，建议使用GPT3.5而不是GPT4。因为GPT4的价格比GPT3.5<span style="color: red;">高出157.5至315倍</span>。且GPT3.5的响应速度是GPT4的<span style="color: red;">四倍多</span>。</p>
             </template>
             <t-button style="margin-bottom: 20px;" v-if="!isLoading" :loading="isButtonLoading" :disabled="isButtonLoading">{{ gpt4Status ? '关闭' : '开启' }}GPT4</t-button>
         </t-popconfirm>
@@ -32,7 +32,7 @@
         <t-popconfirm theme="danger" v-if="!isLoading" @visible-change="onChangeApikeyVisibleChange">
             <template #content>
                 <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
-                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">更换API Key将会导致@openai_sb_bot不可用&旧API Key失效。请将正在使用的旧API Key替换为新API Key。SB Dashboard将会自动保存新API Key。</p>
+                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">更换API Key将导致<span style="color: red;">@openai_sb_bot不可用</span>以及旧API Key失效。请将正在使用的旧API Key替换为新API Key。SB Dashboard将会自动保存新API Key。</p>
             </template>
             <t-button :loading="isButtonLoading" :disabled="isButtonLoading">更换API Key</t-button>
         </t-popconfirm>

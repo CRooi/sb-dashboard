@@ -109,7 +109,7 @@ if (apikey.value != '') {
                 },
                 {
                     key: 'GPT4开关',
-                    value: json.enable_gpt4 ? '打开' : '关闭'
+                    value: json.enable_gpt4 ? '开启' : '关闭'
                 }
             ]
         })
