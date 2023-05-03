@@ -32,7 +32,7 @@
         <t-popconfirm theme="danger" v-if="!isLoading" @visible-change="onChangeApikeyVisibleChange">
             <template #content>
                 <p class="title" style="font-weight: 500; font-size: 14px;">确定吗？</p>
-                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">更换API Key将会导致旧API Key失效。请将正在使用的旧API Key替换为新API Key。SB Dashboard将会自动保存新API Key。</p>
+                <p class="describe" style="margin-top: -12px; font-size: 12px; color: var(--td-text-color-secondary);">更换API Key将会导致@openai_sb_bot不可用&旧API Key失效。请将正在使用的旧API Key替换为新API Key。SB Dashboard将会自动保存新API Key。</p>
             </template>
             <t-button :loading="isButtonLoading" :disabled="isButtonLoading">更换API Key</t-button>
         </t-popconfirm>
