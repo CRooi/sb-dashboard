@@ -54,7 +54,7 @@ let dialog: DialogInstance
 
 if(apikey.value != '') {
     (() => {
-        axios.get(`https://sbapi.crooi.io/sb-api/user/status?api_key=${apikey.value}`).then(res => {
+        axios.get(`https://api.openai-sb.com/sb-api/user/status?api_key=${apikey.value}`).then(res => {
             let json = res.data.data
             if(res.data.code == 500) {
                 MessagePlugin.error('获取状态失败，请检查API Key是否填写正确。')
@@ -80,7 +80,7 @@ let onChangeApikeyVisibleChange = (_val: any, context: any = {}) => {
 
 let switchGpt4 = () => {
     isButtonLoading.value = true
-    let url: string = `https://sbapi.crooi.io/sb-api/user/switch_gpt4?api_key=${apikey.value}&enable=${gpt4Status.value ? '0' : '1'}`
+    let url: string = `https://api.openai-sb.com/sb-api/user/switch_gpt4?api_key=${apikey.value}&enable=${gpt4Status.value ? '0' : '1'}`
     axios.get(url).then(res => {
         let json = res.data
         if(json.code == 500) {
@@ -95,7 +95,7 @@ let switchGpt4 = () => {
 
 let changeApikey = () => {
     isButtonLoading.value = true
-    axios.get(`https://sbapi.crooi.io/sb-api/user/reset?api_key=${apikey.value}`).then(res => {
+    axios.get(`https://api.openai-sb.com/sb-api/user/reset?api_key=${apikey.value}`).then(res => {
         let json = res.data
         if(json.code == 500) {
             MessagePlugin.error('操作失败，请检查API Key是否填写正确。')

@@ -34,12 +34,12 @@ let charge = () => {
         isLoading.value = false
         return
     }
-    axios.get(`https://sbapi.crooi.io/sb-api/user/card/use?api_key=${apikey.value}&card=${card.value}`).then(res => {
+    axios.get(`https://api.openai-sb.com/sb-api/user/card/use?api_key=${apikey.value}&card=${card.value}`).then(res => {
         let json = res.data
         if(json.code == 500) {
             MessagePlugin.error('充值失败，请检查API Key或卡密是否填写正确。')
         }else {
-            axios.get(`https://sbapi.crooi.io/sb-api/user/card/status?api_key=${apikey.value}&card=${card.value}`).then(res => {
+            axios.get(`https://api.openai-sb.com/sb-api/user/card/status?api_key=${apikey.value}&card=${card.value}`).then(res => {
                 let json = res.data
                 if(json.code == 500) {
                     MessagePlugin.error('已充值金额更新失败，原因未知。')

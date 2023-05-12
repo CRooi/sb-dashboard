@@ -78,7 +78,7 @@ let columns = ref([
 if (apikey.value != '') {
     (() => {
         // return
-        axios.get(`https://sbapi.crooi.io/sb-api/user/status?api_key=${apikey.value}`).then(res => {
+        axios.get(`https://api.openai-sb.com/sb-api/user/status?api_key=${apikey.value}`).then(res => {
             let json = res.data.data
             if(res.data.code == 500) {
                 MessagePlugin.error('获取状态失败，请检查API Key是否填写正确。')
